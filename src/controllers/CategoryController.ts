@@ -7,6 +7,7 @@ class CategoryController {
       const categories = await CategoryService.getAll();
       return res.json(categories);
     } catch (error) {
+console.log('ERROR', error);
       return res.status(500).json({ error: 'Erro ao buscar categorias' });
     }
   }
@@ -18,7 +19,8 @@ class CategoryController {
       const category = await CategoryService.create(name);
       return res.status(201).json(category);
     } catch (error) {
-      return res.status(400).json({ error: 'Erro ao criar categoria' });
+console.log('ERROR', error);
+      return res.status(400).json(error);
     }
   }
 
