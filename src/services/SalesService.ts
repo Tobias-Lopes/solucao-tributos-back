@@ -20,7 +20,7 @@ class SalesService {
     const where: any = {};
 
     if (productName) {
-      where.productName = { contains: productName, mode: 'insensitive' };
+      where.productName = { contains: productName };
     }
 
     if (categoryId) {
